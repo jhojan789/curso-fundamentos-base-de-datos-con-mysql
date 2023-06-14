@@ -51,6 +51,15 @@ SELECT *
 FROM usuarios
 	RIGHT JOIN posts ON usuarios.id = posts.usuario_id;
 
+-- trae los A que no tengan B y los B que no tengan A
+-- (TRAE USUARIOS QUE NO TENGAN POSTS Y LOS POSTS QUE NO TENGAN USUARIOS ASOCIADOS)
 
-
-
+SELECT *
+FROM usuarios
+	LEFT JOIN posts ON usuarios.id = posts.usuario_id
+	WHERE posts.usuario_id IS NULL
+UNION
+SELECT *
+FROM usuarios
+	RIGHT JOIN posts ON usuarios.id = posts.usuario_id
+    WHERE posts.usuario_id IS NULL;
