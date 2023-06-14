@@ -40,6 +40,17 @@ SELECT *
 FROM usuarios
 	INNER JOIN posts ON usuarios.id = posts.usuario_id;
 
+-- trae todos los A y todos los B  sin importar que estén o no asociados.
+-- (TRAE TODOS LOS USUARIOS Y POSTS SIN IMPORTAR SI ESTÁN ASOCIADOS O NO)
+
+SELECT *
+FROM usuarios
+	LEFT JOIN posts ON usuarios.id = posts.usuario_id
+UNION
+SELECT *
+FROM usuarios
+	RIGHT JOIN posts ON usuarios.id = posts.usuario_id;
+
 
 
 
