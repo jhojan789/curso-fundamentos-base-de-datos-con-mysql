@@ -33,3 +33,13 @@ FROM usuarios
 	RIGHT JOIN posts ON usuarios.id = posts.usuario_id
 WHERE posts.usuario_id IS NULL;
 
+-- trae los A que tengan B asociados y los B que tengan A asociados.
+-- (TRAE SOLO LOS USUARIOS QUE TENGAN POSTS Y VISCEVERSA)
+
+SELECT *
+FROM usuarios
+	INNER JOIN posts ON usuarios.id = posts.usuario_id;
+
+
+
+
