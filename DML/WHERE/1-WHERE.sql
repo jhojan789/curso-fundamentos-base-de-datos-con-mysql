@@ -61,6 +61,20 @@ SELECT *
 FROM posts
 WHERE MONTH(fecha_publicacion) = '04';
 
+-- NULL and several filters
+SELECT *
+FROM posts
+WHERE usuario_id IS NULL;
+
+-- SEVERAL FILTERS IN A ROW
+SELECT *
+FROM posts
+WHERE usuario_id IS NOT NULL
+	AND estatus = 'activo'
+    AND id < 50
+    AND categoria_id = 2
+    AND YEAR(fecha_publicacion) = '2025';
+
 
 
 
