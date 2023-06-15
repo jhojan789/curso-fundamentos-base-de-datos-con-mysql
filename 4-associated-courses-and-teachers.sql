@@ -1,0 +1,3 @@
+SELECT courses.id AS id, courses.name AS name, courses.teacher_id AS teacher_id, teachers.name AS teacher_name
+FROM courses
+  INNER JOIN teachers ON courses.teacher_id = teachers.id;
